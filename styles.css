@@ -10,7 +10,7 @@
   --soft: rgba(63, 78, 79, 0.05);
   --line: rgba(63, 78, 79, 0.12);
 
-  /* Sage Green & Warm Sand accents */
+  /* Sage Green & Warm Sand accents - Professional & Calming */
   --accent: #7c9473;   
   --accent2: #cfb997; 
 
@@ -242,8 +242,10 @@ a{ color: inherit; text-decoration: none; }
 }
 .hero-inner{
   display:grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
+  /* UPDATED: Changed from 1.1fr 0.9fr to a fixed logic for the image column 
+     to ensure the portrait shape is respected without getting too wide. */
+  grid-template-columns: 1fr 380px; 
+  gap: 60px;
   align-items: center;
 }
 .kicker{
@@ -336,7 +338,7 @@ a{ color: inherit; text-decoration: none; }
   font-size: 16px;
 }
 
-/* Hero card */
+/* Hero card - UPDATED FOR PORTRAIT IMAGE */
 .hero-card{
   border-radius: var(--radius2);
   overflow:hidden;
@@ -344,23 +346,27 @@ a{ color: inherit; text-decoration: none; }
   background: #fff;
   box-shadow: var(--shadow);
   position: relative;
+  /* Added specific width constraint for the card itself */
+  width: 100%; 
+  max-width: 400px;
+  margin: 0 auto;
 }
 .hero-image-wrap{
   border-bottom: 1px solid var(--line);
   background: #f0f0f0;
+  /* UPDATED: Changed aspect-ratio to 3/4 to fit the vertical portrait perfectly */
+  aspect-ratio: 3 / 4; 
 }
-/* Η ΣΗΜΑΝΤΙΚΗ ΔΙΟΡΘΩΣΗ ΓΙΑ ΤΗ ΦΩΤΟΓΡΑΦΙΑ */
 .hero-image{
   width:100%;
   height:100%;
   object-fit: cover;
-  aspect-ratio: 3 / 4;  /* Αυτό κάνει την εικόνα κάθετη (Portrait) */
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  display: block;
+  /* Focus on the top-center to ensure face is never cropped awkwardly */
+  object-position: top center; 
 }
 .hero-card-body{
   padding: 24px;
+  text-align: center; /* Center the caption for a profile card look */
 }
 .card-title{
   margin: 0 0 8px;
@@ -857,7 +863,10 @@ a{ color: inherit; text-decoration: none; }
 /* ========================================= */
 
 @media (max-width: 980px){
+  /* Updated hero inner for tablet/mobile: Stack column and reset width */
   .hero-inner{ grid-template-columns: 1fr; text-align: center; }
+  .hero-card { max-width: 400px; margin: 0 auto; }
+  
   .hero-lead{ margin-left: auto; margin-right: auto; }
   .hero-actions{ justify-content: center; }
   .trust-row{ justify-content: center; }
