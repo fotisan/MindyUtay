@@ -10,7 +10,7 @@
   --soft: rgba(63, 78, 79, 0.05);
   --line: rgba(63, 78, 79, 0.12);
 
-  /* Sage Green & Warm Sand accents - Professional & Calming */
+  /* Sage Green & Warm Sand accents */
   --accent: #7c9473;   
   --accent2: #cfb997; 
 
@@ -349,11 +349,15 @@ a{ color: inherit; text-decoration: none; }
   border-bottom: 1px solid var(--line);
   background: #f0f0f0;
 }
+/* Η ΣΗΜΑΝΤΙΚΗ ΔΙΟΡΘΩΣΗ ΓΙΑ ΤΗ ΦΩΤΟΓΡΑΦΙΑ */
 .hero-image{
   width:100%;
   height:100%;
   object-fit: cover;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;  /* Αυτό κάνει την εικόνα κάθετη (Portrait) */
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  display: block;
 }
 .hero-card-body{
   padding: 24px;
