@@ -1,888 +1,578 @@
-/* styles.css */
-:root{
-  --bg: #fdfcfb;
-  --card: rgba(255,255,255,0.85);
-  --card2: #ffffff;
-  --card3: rgba(255,255,255,0.65);
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow">
 
-  --text: #2c3639;
-  --muted: #5f6c70;
+  <title>Νικολέτα Πλατή | Ψυχολόγος Ρόδος</title>
+  <meta name="description" content="Ιδιωτικές συνεδρίες στη Ρόδο. Ένας ήρεμος χώρος για να ακουστείτε χωρίς πίεση, με καθαρά βήματα και σεβασμό στον ρυθμό σας." />
 
-  --soft: rgba(63, 78, 79, 0.05);
-  --line: rgba(63, 78, 79, 0.12);
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 
-  --accent: #7c9473;   /* Sage Green */
-  --accent2: #cfb997;  /* Warm Sand */
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-  --shadow: 0 18px 60px rgba(44, 54, 57, 0.08);
-  --radius: 12px;
-  --radius2: 16px;
-  --max: 1120px;
+<body>
+  <header class="header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="Αρχική">
+        <span class="logo-stack">
+          <span class="logo-text">Νικολέτα Πλατή</span>
+          <span class="logo-sub">Ψυχολόγος • Ρόδος</span>
+        </span>
+      </a>
 
-  --font: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --serif: "Playfair Display", Georgia, serif;
-}
+      <nav class="nav" aria-label="Κύρια πλοήγηση">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel">
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+          <span class="sr-only">Άνοιγμα μενού</span>
+        </button>
 
-*{ box-sizing: border-box; }
-html{ scroll-behavior: smooth; }
-body{
-  margin:0;
-  font-family: var(--font);
-  background:
-    radial-gradient(1100px 700px at 18% -10%, rgba(124, 148, 115, 0.15), transparent 55%),
-    radial-gradient(900px 600px at 92% 5%, rgba(207, 185, 151, 0.15), transparent 52%),
-    var(--bg);
-  color: var(--text);
-}
+        <div class="nav-panel" id="navPanel">
+          <a class="nav-link" href="#services">Υπηρεσίες</a>
+          <a class="nav-link" href="#about">Σχετικά</a>
+          <a class="nav-link" href="#work-with">Πώς δουλεύουμε</a>
+          <a class="nav-link" href="#faq">FAQ</a>
+          <a class="nav-link nav-cta" href="#contact">Κλείστε Ραντεβού</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-/* scroll lock όταν ανοίγει το mobile menu */
-body.nav-open{ overflow: hidden; }
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy reveal">
+        <p class="kicker">ΨΥΧΟΛΟΓΟΣ - ΨΥΧΟΘΕΡΑΠΕΥΤΡΙΑ | ΡΟΔΟΣ</p>
+        <h1 class="hero-title">Βρείτε την άκρη του νήματος με ατομική Ψυχοθεραπεία.</h1>
+        <p class="hero-lead">
+          Κάντε το επόμενο βήμα για την ισορροπία σας, σε ένα περιβάλλον ασφάλειας και επιστημονικής υποστήριξης.
+        </p>
 
-img{ max-width:100%; display:block; }
-a{ color: inherit; text-decoration: none; }
-.container{
-  width: min(var(--max), calc(100% - 40px));
-  margin: 0 auto;
-}
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Επικοινωνήστε μαζί μου</a>
+          <a class="btn btn-ghost" href="#services">Πώς μπορώ να βοηθήσω;</a>
+        </div>
 
-.sr-only{
-  position:absolute;
-  width:1px;height:1px;
-  padding:0;margin:-1px;
-  overflow:hidden;clip:rect(0,0,0,0);
-  border:0;
-}
+        <div class="trust-row" aria-label="Σημεία εμπιστοσύνης">
+          <div class="trust-pill">
+            <span class="trust-icon" aria-hidden="true">✦</span>
+            <span>Εχεμύθεια</span>
+          </div>
+          <div class="trust-pill">
+            <span class="trust-icon" aria-hidden="true">✦</span>
+            <span>Ρόδος & Online</span>
+          </div>
+          <div class="trust-pill">
+            <span class="trust-icon" aria-hidden="true">✦</span>
+            <span>Καθαρά βήματα</span>
+          </div>
+        </div>
+      </div>
 
-.muted{ color: var(--muted); }
-.small{ font-size: 13px; line-height: 1.5; }
-.mt-20{ margin-top: 20px; }
+      <div class="hero-card reveal">
+        <div class="hero-image-wrap">
+          <img
+            class="hero-image"
+            src="Hero-section.webp"
+            alt="Χώρος συνεδριών Νικολέτα Πλατή"
+            loading="eager"
+          />
+        </div>
 
-/* Scroll reveal */
-.reveal{
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 700ms ease, transform 700ms cubic-bezier(.2,.9,.2,1);
-  will-change: opacity, transform;
-}
-.reveal.in-view{
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (prefers-reduced-motion: reduce){
-  html{ scroll-behavior: auto; }
-  .reveal{ opacity: 1; transform: none; transition: none; }
-}
+        <div class="hero-card-body">
+          <h2 class="card-title">Ψυχοθεραπεία & Ανάπτυξη</h2>
+          <p class="card-text">
+            "Η θεραπεία είναι ένας ασφαλής τόπος. Ένας χώρος όπου μπορείτε να ακουστείτε με σεβασμό, χωρίς να χρειάζεται να αποδείξετε τίποτα."
+          </p>
+        </div>
+      </div>
+    </div>
 
-/* Ribbon */
-.ribbon{
-  background: var(--card3);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
-}
-.ribbon-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 14px;
-  padding: 10px 0;
-  flex-wrap: wrap;
-}
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: #fff;
-  border: 1px solid var(--line);
-  font-weight: 600;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--text);
-}
-.ribbon-left{
-  display:flex;
-  align-items:center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.ribbon-right{
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.toplink{
-  font-size: 13px;
-  color: var(--text);
-  font-weight: 500;
-}
-.dot{ opacity: 0.4; }
+    <div class="hero-bg" aria-hidden="true"></div>
+  </section>
 
-/* Header */
-.header{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(253, 252, 251, 0.85);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
-}
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding: 16px 0;
-  gap: 18px;
-}
-.logo{
-  display:flex;
-  align-items:center;
-  gap: 12px;
-  min-width: 220px;
-}
-.brandmark{
-  width: 40px; height: 40px;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  object-fit: cover;
-}
-.logo-stack{
-  display:flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-.logo-text{
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 20px;
-  color: var(--text);
-}
-.logo-sub{
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--muted);
-  margin-top: 4px;
-}
+  <section class="ribbon" aria-label="Γρήγορη επικοινωνία">
+    <div class="container ribbon-inner reveal">
+      <div class="ribbon-left">
+        <span class="badge">Δέχομαι νέα ραντεβού</span>
+        <span class="muted small">Δια ζώσης & Online Συνεδρίες</span>
+      </div>
 
-/* Nav */
-.nav{
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  position: relative;
-}
-.nav-panel{
-  display:flex;
-  align-items:center;
-  gap: 18px;
-}
-.nav-link{
-  font-size: 14px;
-  color: var(--muted);
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: all 160ms ease;
-  font-weight: 500;
-}
-.nav-link:hover{
-  background: var(--soft);
-  color: var(--text);
-}
-.nav-cta{
-  background: var(--text);
-  color: #fff !important;
-  border: 1px solid var(--text);
-}
-.nav-cta:hover{
-  background: #4a575b;
-  color: #fff;
-}
+      <div class="ribbon-right">
+        <a class="toplink" href="tel:+306949626413">+30 694 962 6413</a>
+        <span class="dot">•</span>
+        <a class="toplink" href="mailto:nicoletaplath@gmail.com">nicoletaplath@gmail.com</a>
+      </div>
+    </div>
+  </section>
 
-/* Nav Toggle */
-.nav-toggle{
-  display:none;
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  background: #fff;
-  cursor: pointer;
-  box-shadow: 0 10px 26px rgba(15,23,42,0.08);
-  align-items: center;
-  justify-content: center;
-  z-index: 60;
-  padding: 0;
-}
-.nav-toggle-lines{
-  width: 18px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 999px;
-  display:block;
-  position: relative;
-  transition: all 0.3s ease;
-}
-.nav-toggle-lines::before,
-.nav-toggle-lines::after{
-  content:"";
-  position:absolute;
-  left:0;
-  width:100%;
-  height:2px;
-  background: var(--text);
-  border-radius: 999px;
-  transition: all 0.3s ease;
-}
-.nav-toggle-lines::before{ top: -6px; }
-.nav-toggle-lines::after{ top: 6px; }
+  <section class="section" id="about">
+    <div class="container split">
+      <div class="reveal">
+        <div class="bio-head" aria-label="Προφίλ">
+          <div class="bio-avatar">
+            <img
+              src="about.webp"
+              alt="Νικολέτα Πλατή"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <p class="bio-kicker">Νικολέτα Πλατή</p>
+            <p class="bio-sub">BSc (Hons) Psychology</p>
+          </div>
+        </div>
 
-/* Hero */
-.hero{
-  position: relative;
-  padding: 80px 0 50px;
-  overflow: hidden;
-}
-.hero-inner{
-  display:grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
-  align-items: center;
-}
-.kicker{
-  display:inline-flex;
-  align-items:center;
-  gap: 10px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.8);
-  border: 1px solid var(--line);
-  color: var(--muted);
-  margin: 0 0 18px;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 600;
-}
-.hero-title{
-  font-family: var(--serif);
-  font-weight: 500;
-  letter-spacing: -0.5px;
-  font-size: 52px;
-  line-height: 1.1;
-  margin: 0 0 18px;
-  color: var(--text);
-}
-.hero-lead{
-  margin: 0 0 24px;
-  line-height: 1.8;
-  color: var(--muted);
-  max-width: 54ch;
-  font-size: 17px;
-}
-.hero-actions{
-  display:flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
-}
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap: 10px;
-  border-radius: 8px;
-  padding: 14px 20px;
-  border: 1px solid var(--line);
-  background: #fff;
-  color: var(--text);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 200ms ease;
-  font-size: 15px;
-}
-.btn:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-.btn-primary{
-  background: var(--text);
-  border-color: var(--text);
-  color: #fff;
-  box-shadow: 0 10px 30px rgba(44,54,57,0.15);
-}
-.btn-primary:hover{
-  background: #3f4e4f;
-  border-color: #3f4e4f;
-}
-.btn-ghost{
-  background: transparent;
-  border: 1px solid var(--text);
-}
-.btn-full{ width: 100%; }
+        <h2 class="section-title">Σχετικά με εμένα</h2>
+        <p class="section-lead">
+          Μερικές φορές δεν είναι ένα «μεγάλο» γεγονός που μας φέρνει εδώ. Είναι η συσσώρευση. Η κούραση που μένει, το σώμα που σφίγγει, οι σκέψεις που γυρίζουν την ίδια διαδρομή.
+        </p>
+        <p class="muted">
+          Η θεραπεία, για μένα, είναι ένας ασφαλής τόπος. Δουλεύουμε με αυτό που είναι αληθινό για εσάς, και το κάνουμε με τρόπο που να μπορεί να «ζήσει» μέσα στην καθημερινότητα.
+        </p>
+        <p class="muted">
+          Έχω εξειδικευτεί στην Εκπαιδευτική και Συμβουλευτική Ψυχολογία, καθώς και στην Αφηγηματική Ψυχοθεραπεία (ΕΚΠΑ), δίνοντας έμφαση στη σχέση, στην ενσυναίσθηση και στη δομημένη υποστήριξη.
+        </p>
 
-.trust-row{
-  display:flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.trust-pill{
-  display:flex;
-  align-items:center;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--muted);
-  font-weight: 500;
-}
-.trust-icon{
-  color: var(--accent);
-  font-size: 16px;
-}
+        <div class="bullets">
+          <div class="bullet">
+            <div class="bullet-dot">01</div>
+            <p><strong>Ασφάλεια.</strong> Ένας χώρος χωρίς πίεση, όπου μπορείτε να μιλήσετε ελεύθερα.</p>
+          </div>
+          <div class="bullet">
+            <div class="bullet-dot">02</div>
+            <p><strong>Σταθερότητα.</strong> Χτίζουμε μια σχέση εμπιστοσύνης που λειτουργεί ως βάση για την αλλαγή.</p>
+          </div>
+          <div class="bullet">
+            <div class="bullet-dot">03</div>
+            <p><strong>Πρακτικότητα.</strong> Εστιάζουμε σε λύσεις που εφαρμόζονται στην καθημερινή σας ζωή.</p>
+          </div>
+        </div>
+      </div>
 
-/* Hero card */
-.hero-card{
-  border-radius: var(--radius2);
-  overflow:hidden;
-  border: 1px solid var(--line);
-  background: #fff;
-  box-shadow: var(--shadow);
-  position: relative;
-}
-.hero-image-wrap{
-  border-bottom: 1px solid var(--line);
-  background: #f0f0f0;
-}
-.hero-image{
-  width:100%;
-  height:100%;
-  object-fit: cover;
-  aspect-ratio: 4 / 3;
-}
-.hero-card-body{ padding: 24px; }
-.card-title{
-  margin: 0 0 8px;
-  font-size: 18px;
-  font-family: var(--serif);
-}
-.card-text{
-  margin: 0 0 0;
-  line-height: 1.7;
-  color: var(--muted);
-  font-size: 14px;
-}
-.hero-bg{
-  position:absolute;
-  left: 0;
-  right: 0;
-  top: -70px;
-  bottom: -90px;
-  pointer-events:none;
-  background:
-    radial-gradient(900px 360px at 16% 40%, rgba(124,148,115,0.10), transparent 60%),
-    radial-gradient(760px 320px at 88% 30%, rgba(207,185,151,0.12), transparent 62%),
-    linear-gradient(to bottom, rgba(253,252,251,0) 0%, rgba(253,252,251,0) 65%, rgba(253,252,251,1) 100%);
-  z-index: -1;
-}
+      <div class="info-card reveal">
+        <h3 class="info-title">Πληροφορίες</h3>
+        <div class="info-grid">
+          <div class="info-item">
+            <p class="info-k">Τοποθεσία</p>
+            <p class="info-v">Στεφάνου Καζούλη 18<br>Ρόδος</p>
+          </div>
+          <div class="info-item">
+            <p class="info-k">Τύπος Συνεδρίας</p>
+            <p class="info-v">Δια ζώσης & Online</p>
+          </div>
+          <div class="info-item">
+            <p class="info-k">Διάρκεια</p>
+            <p class="info-v">45-60 λεπτά</p>
+          </div>
+          <div class="info-item">
+            <p class="info-k">Επικοινωνία</p>
+            <p class="info-v">Τηλεφωνικά ή Email</p>
+          </div>
+        </div>
 
-/* Sections */
-.section{ padding: 64px 0; }
-.section-alt{ background: transparent; border-top: 0; border-bottom: 0; }
-.section-head{
-  max-width: 760px;
-  margin: 0 auto 36px;
-  text-align: center;
-}
-.section-title{
-  font-family: var(--serif);
-  letter-spacing: -0.2px;
-  font-size: 38px;
-  margin: 0 0 14px;
-  color: var(--text);
-}
-.section-lead{
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.75;
-  font-size: 17px;
-}
+        <a class="btn btn-primary btn-full" href="#contact">Κάντε το πρώτο βήμα</a>
+      </div>
+    </div>
+  </section>
 
-/* Split layout */
-.split{
-  display:grid;
-  grid-template-columns: 1fr 0.8fr;
-  gap: 40px;
-  align-items: start;
-}
+  <section class="section section-alt" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title">Υπηρεσίες</h2>
+        <p class="section-lead">
+          Ένας καθαρός τρόπος να δείτε τι μπορούμε να δουλέψουμε, με απλά βήματα και σεβασμό στον ρυθμό σας.
+        </p>
+      </div>
 
-/* Bio */
-.bio-head{
-  display:flex;
-  align-items:center;
-  gap: 16px;
-  margin: 0 0 24px;
-}
-.bio-avatar{
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: #f0f0f0;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
-  flex: 0 0 auto;
-}
-.bio-avatar img{ width:100%; height:100%; object-fit: cover; }
-.bio-kicker{
-  margin: 0 0 4px;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.bio-sub{
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 20px;
-  color: var(--text);
-}
+      <div class="cards">
+        <article class="card reveal">
+          <h3 class="card-h">Ατομική Ψυχοθεραπεία</h3>
+          <p class="card-p">Για ενήλικες, εφήβους και παιδιά. Έμφαση στη σχέση, στην ασφάλεια και στην επεξεργασία δυσκολιών.</p>
+          <p class="card-mini">Ενήλικες & Παιδιά</p>
+        </article>
 
-/* Bullets */
-.bullets{
-  margin-top: 24px;
-  display:grid;
-  gap: 16px;
-}
-.bullet{
-  display:flex;
-  gap: 16px;
-  padding: 18px;
-  border-radius: var(--radius);
-  background: #fff;
-  border: 1px solid var(--line);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-}
-.bullet-dot{
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: rgba(124, 148, 115, 0.15);
-  color: var(--accent);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size: 12px;
-  flex: 0 0 auto;
-}
+        <article class="card reveal">
+          <h3 class="card-h">Συμβουλευτική Υποστήριξη</h3>
+          <p class="card-p">Πρακτική βοήθεια για άγχος, stress, χαμηλή αυτοεκτίμηση και διαχείριση αλλαγών ζωής.</p>
+          <p class="card-mini">Διαχείριση Άγχους</p>
+        </article>
 
-/* Info card */
-.info-card{
-  border-radius: var(--radius2);
-  background: #fff;
-  border: 1px solid var(--line);
-  padding: 24px;
-  box-shadow: var(--shadow);
-}
-.info-title{
-  margin: 0 0 16px;
-  font-size: 18px;
-  font-family: var(--serif);
-}
-.info-grid{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-.info-item{
-  padding: 14px;
-  border-radius: 10px;
-  background: var(--bg);
-  border: 1px solid var(--line);
-}
-.info-k{
-  margin: 0 0 6px;
-  font-size: 13px;
-  color: var(--muted);
-  font-weight: 600;
-}
-.info-v{
-  margin: 0;
-  font-weight: 600;
-  font-size: 13px;
-  color: var(--text);
-}
+        <article class="card reveal">
+          <h3 class="card-h">Θεραπεία Σχέσεων</h3>
+          <p class="card-p">Βελτίωση επικοινωνίας, όρια, συναισθηματική εξάρτηση και οικογενειακές δυσκολίες.</p>
+          <p class="card-mini">Ζευγάρια & Οικογένεια</p>
+        </article>
 
-/* Cards */
-.cards{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.card{
-  border-radius: var(--radius2);
-  background: #fff;
-  border: 1px solid var(--line);
-  padding: 24px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-  transition: transform 160ms ease, border-color 160ms ease;
-  display: flex;
-  flex-direction: column;
-}
-.card:hover{
-  transform: translateY(-4px);
-  border-color: var(--accent);
-}
-.card-h{
-  margin: 10px 0 10px;
-  font-size: 18px;
-  font-family: var(--serif);
-  color: var(--text);
-}
-.card-p{
-  margin: 0 0 16px;
-  line-height: 1.6;
-  color: var(--muted);
-  font-size: 14px;
-  flex-grow: 1;
-}
-.card-mini{
-  margin: 0;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--accent);
-  font-weight: 700;
-}
+        <article class="card reveal">
+          <h3 class="card-h">Γονεϊκή Υποστήριξη</h3>
+          <p class="card-p">Καθοδήγηση για γονείς, υποστήριξη σε θέματα ΔΕΠΥ/αυτισμού και οριοθέτηση συμπεριφοράς.</p>
+          <p class="card-mini">Συμβουλευτική Γονέων</p>
+        </article>
 
-/* Chips */
-.chip-row{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display:flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.chip{
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(124,148,115,0.12);
-  border: 1px solid rgba(124,148,115,0.18);
-  color: var(--text);
-}
+        <article class="card reveal">
+          <h3 class="card-h">Προσωπική Ανάπτυξη</h3>
+          <p class="card-p">Στόχοι, λήψη αποφάσεων, μεταβάσεις ζωής και ενίσχυση της αυτογνωσίας.</p>
+          <p class="card-mini">Αυτοβελτίωση</p>
+        </article>
 
-/* Lists */
-.custom-list{ list-style: none; padding: 0; margin: 14px 0 0; }
-.custom-list li{
-  padding-left: 18px;
-  position: relative;
-  margin-bottom: 10px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-.custom-list li::before{
-  content: "•";
-  color: var(--accent);
-  font-size: 20px;
-  position: absolute;
-  left: 0;
-  top: -6px;
-}
+        <article class="card reveal">
+          <h3 class="card-h">Ομαδικές Δράσεις</h3>
+          <p class="card-p">Μικρές ομάδες υποστήριξης και εργαστήρια δεξιοτήτων για σύνδεση και ενδυνάμωση.</p>
+          <p class="card-mini">Workshops</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-/* DETAILS (Focus + FAQ) */
-.details-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-.details-stack{
-  display:grid;
-  gap: 12px;
-  max-width: 880px;
-  margin: 0 auto;
-}
-.details{
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-  overflow: hidden;
-}
-.details-sum{
-  cursor: pointer;
-  padding: 16px 18px;
-  font-weight: 600;
-  color: var(--text);
-  position: relative;
-  list-style: none;
-}
-.details-sum::-webkit-details-marker{ display:none; }
-.details-sum::after{
-  content:"";
-  position:absolute;
-  right: 16px;
-  top: 50%;
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid var(--text);
-  border-bottom: 2px solid var(--text);
-  transform: translateY(-60%) rotate(45deg);
-  transition: transform 180ms ease;
-  opacity: .7;
-}
-details[open] .details-sum::after{
-  transform: translateY(-40%) rotate(-135deg);
-}
-.details-body{
-  padding: 0 18px 16px;
-  border-top: 1px solid rgba(0,0,0,0.04);
-}
-.details-body p{ margin: 12px 0 0; color: var(--muted); line-height: 1.7; }
+  <section class="section" id="work-with">
+    <div class="container split">
+      <div class="reveal">
+        <h2 class="section-title">Πώς δουλεύουμε μαζί</h2>
+        <p class="section-lead">
+          Δεν χρειάζεται να ξέρετε από πού να ξεκινήσετε. Το πλαίσιό μας κρατά ασφάλεια, απλότητα και σταθερά βήματα.
+        </p>
 
-/* Timeline */
-.timeline{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-.titem{
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-}
-.t-title{
-  margin: 0 0 6px;
-  font-family: var(--serif);
-  font-size: 18px;
-}
-.t-sub{
-  margin: 0 0 10px;
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 13px;
-}
-.t-p{
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.7;
-  font-size: 14px;
-}
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step-n">1</div>
+            <div class="step-b">
+              <h3 class="step-h">Δια ζώσης</h3>
+              <p class="step-p">Στον χώρο μου στη Ρόδο (Στεφάνου Καζούλη 18), σε ένα ήρεμο και διακριτικό περιβάλλον.</p>
+            </div>
+          </div>
 
-/* Contact */
-.contact-block{
-  margin-top: 24px;
-  display:grid;
-  gap: 16px;
-}
-.contact-line{
-  display:flex;
-  gap: 16px;
-  align-items:center;
-  padding: 18px;
-  border-radius: var(--radius);
-  background: #fff;
-  border: 1px solid var(--line);
-}
-.cicon{
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background: var(--soft);
-  color: var(--text);
-}
-.ck{
-  margin: 0 0 2px;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: var(--muted);
-  letter-spacing: 0.5px;
-}
-.cv{
-  margin: 0;
-  font-weight: 600;
-  color: var(--text);
-  font-size: 15px;
-}
+          <div class="step reveal">
+            <div class="step-n">2</div>
+            <div class="step-b">
+              <h3 class="step-h">Online Συνεδρίες</h3>
+              <p class="step-p">Με σταθερότητα, ιδιωτικότητα και καθαρή δομή, όπου κι αν βρίσκεστε.</p>
+            </div>
+          </div>
 
-/* Map */
-.map{
-  margin-top: 20px;
-  border-radius: var(--radius2);
-  overflow:hidden;
-  border: 1px solid var(--line);
-  background: #eee;
-  box-shadow: var(--shadow);
-}
-.map iframe{
-  width:100%;
-  height: 320px;
-  border: 0;
-  display:block;
-  opacity: 0.95;
-}
+          <div class="step reveal">
+            <div class="step-n">3</div>
+            <div class="step-b">
+              <h3 class="step-h">Ο Ρυθμός σας</h3>
+              <p class="step-p">Δεν υπάρχει προκαθορισμένη δέσμευση. Συμφωνούμε μαζί το πλάνο που σας ταιριάζει.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-/* Form */
-.form{
-  border-radius: var(--radius2);
-  background: #fff;
-  border: 1px solid var(--line);
-  padding: 30px;
-  box-shadow: var(--shadow);
-}
-.form-title{
-  margin: 0 0 20px;
-  font-size: 20px;
-  font-family: var(--serif);
-}
-.field{ display:block; margin-bottom: 16px; }
-.label{
-  display:block;
-  margin-bottom: 6px;
-  font-size: 13px;
-  color: var(--text);
-  font-weight: 500;
-}
-.input{
-  width: 100%;
-  border-radius: 8px;
-  padding: 14px 14px;
-  border: 1px solid #d1d5db;
-  background: #f9fafb;
-  color: var(--text);
-  outline: none;
-  font: inherit;
-  transition: all 160ms ease;
-}
-.input:focus{
-  border-color: var(--accent);
-  background: #fff;
-  box-shadow: 0 0 0 3px rgba(124, 148, 115, 0.15);
-}
-.textarea{ resize: vertical; min-height: 140px; }
-.invalid{ border-color: #b91c1c !important; }
+      <div class="quote-card reveal">
+        <p class="quote">
+          “Το ζητούμενο δεν είναι η τελειότητα. Είναι η στήριξη, η κατανόηση, και μια σταθερή συνεργασία ώστε η καθημερινότητα να γίνει πιο ήρεμη και πιο ανθρώπινη.”
+        </p>
+        <div class="quote-meta">
+          <div class="avatar">
+            <img src="about.webp" alt="Νικολέτα Πλατή" loading="lazy" />
+          </div>
+          <div>
+            <p class="quote-name">Νικολέτα Πλατή</p>
+            <p class="small muted">Ψυχολόγος</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* Footer */
-.footer{
-  padding: 50px 0;
-  background: #f5f5f4;
-  border-top: 1px solid var(--line);
-}
-.footer-inner{
-  display:grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: start;
-  gap: 30px;
-}
-.foot-brand{
-  margin: 0 0 10px;
-  font-weight: 700;
-  font-family: var(--serif);
-  font-size: 18px;
-}
-.foot-links{
-  display:flex;
-  gap: 14px;
-  justify-content:center;
-  flex-wrap: wrap;
-}
-.foot-link{
-  font-size: 13px;
-  color: var(--muted);
-  padding: 8px 10px;
-  border-radius: 8px;
-}
-.foot-link:hover{ background: var(--soft); color: var(--text); }
-.foot-legal{ text-align: right; }
+  <section class="section section-alt" id="faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title">Συχνές Ερωτήσεις (FAQ)</h2>
+      </div>
 
-/* Back to Top Button */
-.to-top {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--text);
-  color: #fff;
-  border: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(10px);
-  transition: all 300ms ease;
-  z-index: 90;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-.to-top:hover { background: var(--accent); transform: translateY(-2px); }
-.to-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+      <div class="accordion reveal" data-accordion>
+        <button class="acc-item" aria-expanded="false">
+          <span class="acc-q">Πόση είναι η διάρκεια των συνεδριών;</span>
+          <span class="acc-ic" aria-hidden="true"></span>
+        </button>
+        <div class="acc-a" hidden>
+          <p>
+            Η τυπική διάρκεια είναι 60 λεπτά. Αυτός ο χρόνος είναι αποκλειστικά δικός σας, για να μιλήσουμε χωρίς βιασύνη και να επεξεργαστούμε όσα σας απασχολούν.
+          </p>
+        </div>
 
-/* Responsive & Mobile Menu */
-@media (max-width: 980px){
-  .hero-inner{ grid-template-columns: 1fr; text-align: center; }
-  .hero-lead{ margin-left: auto; margin-right: auto; }
-  .hero-actions{ justify-content: center; }
-  .trust-row{ justify-content: center; }
+        <button class="acc-item" aria-expanded="false">
+          <span class="acc-q">Είναι οι συνεδρίες εμπιστευτικές;</span>
+          <span class="acc-ic" aria-hidden="true"></span>
+        </button>
+        <div class="acc-a" hidden>
+          <p>
+            Απόλυτα. Το θεραπευτικό απόρρητο προστατεύεται από τον κώδικα δεοντολογίας των ψυχολόγων. Οτιδήποτε μοιράζεστε παραμένει αυστηρά μεταξύ μας.
+          </p>
+        </div>
 
-  .split{ grid-template-columns: 1fr; }
-  .cards{ grid-template-columns: 1fr 1fr; }
-  .footer-inner{ grid-template-columns: 1fr; text-align: center; }
-  .foot-legal{ text-align: center; }
-  .timeline{ grid-template-columns: 1fr; }
-  .details-grid{ grid-template-columns: 1fr; }
-}
+        <button class="acc-item" aria-expanded="false">
+          <span class="acc-q">Πώς ξέρω τι είδους υπηρεσία χρειάζομαι;</span>
+          <span class="acc-ic" aria-hidden="true"></span>
+        </button>
+        <div class="acc-a" hidden>
+          <p>
+            Δεν χρειάζεται να το γνωρίζετε από πριν. Στην πρώτη μας επικοινωνία, θα περιγράψετε τι σας δυσκολεύει και θα σας καθοδηγήσω στο κατάλληλο πλάνο.
+          </p>
+        </div>
 
-@media (max-width: 760px){
-  .nav-toggle{ display:flex; }
+        <button class="acc-item" aria-expanded="false">
+          <span class="acc-q">Τι γίνεται αν δεν έχω ξαναπάει σε ψυχολόγο;</span>
+          <span class="acc-ic" aria-hidden="true"></span>
+        </button>
+        <div class="acc-a" hidden>
+          <p>
+            Είναι φυσιολογικό να νιώθετε αμηχανία. Η διαδικασία είναι πολύ πιο απλή και ανθρώπινη απ' όσο φαντάζεστε. Δεν χρειάζεται να έχετε προετοιμάσει τι θα πείτε· θα βρούμε την άκρη μαζί.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  .nav-panel{
-    display:none;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
+  <section class="section" id="contact">
+    <div class="container split">
+      <div class="reveal">
+        <h2 class="section-title">Επικοινωνία</h2>
+        <div class="contact-block">
+          <div class="contact-line reveal">
+            <span class="cicon" aria-hidden="true">📍</span>
+            <div>
+              <p class="ck">Διεύθυνση</p>
+              <p class="cv">Στεφάνου Καζούλη 18<br>Ρόδος, Ελλάδα</p>
+            </div>
+          </div>
 
-    position: absolute;
-    right: 0;
-    top: 100%;
-    margin-top: 10px;
-    width: min(320px, calc(100vw - 32px));
+          <div class="contact-line reveal">
+            <span class="cicon" aria-hidden="true">☎</span>
+            <div>
+              <p class="ck">Τηλέφωνο</p>
+              <a class="cv" href="tel:+306949626413">+30 694 962 6413</a>
+            </div>
+          </div>
 
-    background: #fff;
-    border: 1px solid var(--line);
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    z-index: 100;
-  }
-  .nav-panel.open{
-    display:flex;
-    animation: slideDown 0.2s ease-out forwards;
-  }
+          <div class="contact-line reveal">
+            <span class="cicon" aria-hidden="true">✉</span>
+            <div>
+              <p class="ck">Email</p>
+              <a class="cv" href="mailto:nicoletaplath@gmail.com">nicoletaplath@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  .cards{ grid-template-columns: 1fr; }
-  .to-top { bottom: 16px; right: 16px; }
+      <div class="map reveal">
+        <iframe 
+          title="Χάρτης τοποθεσίας"
+          src="https://maps.google.com/maps?q=Stefana+Kazouli+18,+Rhodes&output=embed" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+    
+    <div class="container" style="max-width: 600px; margin-top: 40px;">
+        <div class="form reveal">
+            <h3 class="form-title">Φόρμα Επικοινωνίας</h3>
+            <p class="small muted" style="margin-bottom:20px;">
+              Στείλτε μου ένα μήνυμα και θα επικοινωνήσω μαζί σας σύντομα.
+            </p>
+            
+            <form id="contactForm" action="#" method="post" novalidate>
+              <label class="field">
+                <span class="label">Ονοματεπώνυμο</span>
+                <input class="input" type="text" name="name" required />
+                <span class="error"></span>
+              </label>
+    
+              <label class="field">
+                <span class="label">Τηλέφωνο</span>
+                <input class="input" type="tel" name="phone" required />
+                <span class="error"></span>
+              </label>
+    
+              <label class="field">
+                <span class="label">Μήνυμα</span>
+                <textarea class="input textarea" name="message" placeholder="Πώς μπορώ να βοηθήσω;" required></textarea>
+                <span class="error"></span>
+              </label>
+    
+              <button class="btn btn-primary btn-full" type="submit">Αποστολή</button>
+            </form>
+          </div>
+    </div>
+  </section>
 
-  .nav-toggle[aria-expanded="true"] .nav-toggle-lines { background: transparent; }
-  .nav-toggle[aria-expanded="true"] .nav-toggle-lines::before { top: 0; transform: rotate(45deg); }
-  .nav-toggle[aria-expanded="true"] .nav-toggle-lines::after { top: 0; transform: rotate(-45deg); }
-}
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="foot-left">
+        <p class="foot-brand">Νικολέτα Πλατή</p>
+        <p class="small muted">
+          Ψυχολόγος<br>
+          Ιδιωτικές συνεδρίες στη Ρόδο.
+        </p>
+      </div>
 
-/* Simple keyframe for menu entrance */
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+      <div class="foot-links">
+        <a class="foot-link" href="#services">Υπηρεσίες</a>
+        <a class="foot-link" href="#about">Σχετικά</a>
+        <a class="foot-link" href="#contact">Επικοινωνία</a>
+      </div>
+
+      <div class="foot-legal">
+        <p class="small muted">© <span id="year">2026</span> Νικολέτα Πλατή. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Επιστροφή στην κορυφή">
+    <span aria-hidden="true">↑</span>
+  </button>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const ready = (fn) => {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", fn, { once: true });
+        } else {
+          fn();
+        }
+      };
+
+      ready(() => {
+        // Current year
+        const yearEl = document.getElementById("year");
+        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+        // Mobile navigation
+        const navToggle = document.getElementById("navToggle");
+        const navPanel = document.getElementById("navPanel");
+
+        if (navToggle && navPanel) {
+          const closeNav = () => {
+            navPanel.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+          };
+
+          navToggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const isOpen = navPanel.classList.toggle("open");
+            navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          });
+
+          document.addEventListener("click", (e) => {
+            if (!navPanel.contains(e.target) && !navToggle.contains(e.target)) closeNav();
+          });
+
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeNav();
+          });
+
+          navPanel.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeNav);
+          });
+        }
+
+        // Accordion
+        document.querySelectorAll("[data-accordion]").forEach((accordion) => {
+          const buttons = Array.from(accordion.querySelectorAll(".acc-item"));
+          buttons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const isExpanded = btn.getAttribute("aria-expanded") === "true";
+
+              // Close all
+              buttons.forEach((b) => {
+                b.setAttribute("aria-expanded", "false");
+                const panel = b.nextElementSibling;
+                if (panel && panel.classList.contains("acc-a")) panel.hidden = true;
+              });
+
+              // Open current if it was closed
+              btn.setAttribute("aria-expanded", isExpanded ? "false" : "true");
+              const panel = btn.nextElementSibling;
+              if (panel && panel.classList.contains("acc-a")) panel.hidden = isExpanded;
+            });
+          });
+        });
+
+        // Scroll to top
+        const toTop = document.getElementById("toTop");
+        if (toTop) {
+          const setState = () => {
+            if (window.scrollY > 450) toTop.classList.add("show");
+            else toTop.classList.remove("show");
+          };
+
+          window.addEventListener("scroll", setState, { passive: true });
+          setState();
+
+          toTop.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
+
+        // Lightweight form validation
+        const form = document.getElementById("contactForm");
+        if (form) {
+          const markInvalid = (el, isInvalid) => {
+            if (isInvalid) el.classList.add("invalid");
+            else el.classList.remove("invalid");
+          };
+
+          form.addEventListener("submit", (e) => {
+            const requiredFields = Array.from(form.querySelectorAll("[required]"));
+            let ok = true;
+
+            requiredFields.forEach((field) => {
+              const value = (field.value || "").trim();
+              const invalid = value.length === 0;
+              markInvalid(field, invalid);
+              if (invalid) ok = false;
+            });
+
+            if (!ok) e.preventDefault();
+          });
+
+          form.querySelectorAll("input, textarea").forEach((field) => {
+            field.addEventListener("input", () => markInvalid(field, false));
+            field.addEventListener("blur", () => {
+              if (field.hasAttribute("required")) markInvalid(field, (field.value || "").trim().length === 0);
+            });
+          });
+        }
+
+        // Scroll reveal (load on user scroll)
+        const revealEls = Array.from(document.querySelectorAll(".reveal"));
+        if (!revealEls.length) return;
+
+        const show = (el) => el.classList.add("in-view");
+
+        if (!("IntersectionObserver" in window)) {
+          revealEls.forEach(show);
+          return;
+        }
+
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                show(entry.target);
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
+        );
+
+        revealEls.forEach((el) => io.observe(el));
+      });
+    })();
+  </script>
+</body>
+</html>
